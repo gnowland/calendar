@@ -23,9 +23,10 @@ function build_calendar($month,$year,$title) { // REMOVED: $dateArray
     $monthName = $dateComponents['month'];
     // What is the index value (0-6) of the first day of the month in question.
     $dayOfWeek = $dateComponents['wday'];
+
     // Create the table tag opener and day headers
     $calendar = "<table class='calendar'>";
-    $calendar .= "<caption>$title</caption>"; //$monthName $year removed
+    $calendar .= "<caption>$title</caption>"; // REMOVED: $monthName $year
     $calendar .= "<tr>";
 
     // Create the calendar headers
@@ -59,7 +60,7 @@ function build_calendar($month,$year,$title) { // REMOVED: $dateArray
               $calendar .= "<td class='day highlighted' rel='$date'><span>$currentDay</span></td>";
         }
 
-        else if($title == 'Tomorrow' && $currentDayRel == $tomorrow_date ){
+        else if($title == 'Tomorrow' && $tomorrow_date <= $numberDays && $currentDayRel == $tomorrow_date ){
               $calendar .= "<td class='day highlighted' rel='$date'><span>$currentDay</span></td>";
         }
 

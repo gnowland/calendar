@@ -131,7 +131,7 @@ echo build_calendar($month,$year,$title);
 $dateComponents = getdate();
 $month = $dateComponents['mon'];
 $year = $dateComponents['year'];
-$title = 'Next Week';
+$title = 'This Weekend';
 
 echo build_calendar($month,$year,$title);
 
